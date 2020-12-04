@@ -1,0 +1,49 @@
+<span></span>
+
+<div class="container">
+  <div class="row mt-4">
+    <div class=" col-md-4  pt-5  py-10">
+      <div class="card">
+        <div class="card-header">
+          Create a new task
+        </div>
+        <div class="card-body">
+          {{> form}}
+        </div>
+      </div>
+    </div>
+
+  </div>
+<div class="row mt-4">
+  {{>messages}}
+</div>
+
+  <div class="row mt-4">
+
+    {{#each tasks }}
+    <div class="col-md-3 mt-4">
+      <div class="card">
+        <div class="card-header ">
+          <h3 class="card-title d-flex jusify-content-between">
+            {{title}}
+            <a href="/tasks/{{_id}}">
+              <i class="fa fa-pencil"></i>
+            </a>
+          </h3>
+        </div>
+        <div class="card-body">
+          {{description}}
+        </div>
+        <div class="card-footer justify-content-between ">
+          <div class="d-flex">
+            <form action="/tasks/{{_id}}?_method=DELETE" method="POST">
+              <input type="hidden" name="_method" value="DELETE">
+              <button class="btn btn-danger" type="submit">Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

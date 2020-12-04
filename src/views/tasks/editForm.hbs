@@ -1,0 +1,29 @@
+<span></span>
+
+<div class="py-5 mt-4 ">
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <div class="card">
+        <div class="card-header">
+          <h1 class="h3 mb-3 font-weight-normal">Edit a task</h1>
+        </div>
+        <div class="card-body">
+          <form action="/tasks/{{_id}}?_method=PUT" method="POST">
+            <input type="hidden" name="_method" value="PUT">
+            <div class="form-group">
+              <label for="taskTitle">Title</label>
+              <input type="text" name="title" class="form-control" value="{{title}}">
+            </div>
+            <div class="form-group">
+              <label for="taskDescription">Description</label>
+              <textarea name="description" cols="30" rows="3" class="form-control">
+      {{description}}
+    </textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
